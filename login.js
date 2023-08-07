@@ -23,7 +23,7 @@ for(let i=0;i<signArray.length;i++){
  if(loginEmail.value==signArray[i].email||loginPassword.value==signArray[i].password)
  {
     localStorage.setItem("user",JSON.stringify(signArray[i].name))
-    location.href="../home/index.html"
+    location.href="home/home.html"
     break;
  }
 

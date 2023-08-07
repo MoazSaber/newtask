@@ -33,7 +33,7 @@ function add() {
                 else {
                     signArray.push(signObject)
         localStorage.setItem('accounts',JSON.stringify(signArray))
-        location.href="../Login/index.html"
+        location.href="../index.html"
     }
             }
 }

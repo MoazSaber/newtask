@@ -1,4 +1,4 @@
-document.getElementById('userName').innerHTML=JSON.parse(localStorage.getItem('user'))
+document.getElementById('userName').innerHTML= `Welcome ` + JSON.parse(localStorage.getItem('user'))
 
 
 let btn=document.getElementById('logBtn')

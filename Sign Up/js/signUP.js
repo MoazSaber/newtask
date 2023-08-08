@@ -1,7 +1,8 @@
 let signName = document.getElementById('signName')
 let signEmail=document.getElementById('signEmail')
 let signPassword=document.getElementById('signPassword')
-let  signArray=[]
+
+let signArray=[]
 if(localStorage.getItem('accounts')!=null){
     signArray=JSON.parse(localStorage.getItem('accounts'))
 }else {
@@ -27,9 +28,10 @@ function add() {
                 if(vail){
                     document.getElementById('wrong').innerHTML="your email exists"
                 }
-                else if(checkEmail(signEmail.value)=== false){
-                    document.getElementById('wrong').innerHTML="Email must end with @.com"
+                else if(checkEmail(signEmail.value)=== false || checkPassword(signPassword.value) === false){
+                    document.getElementById('wrong').innerHTML="Email must end with @.com and password must be 8 numbers plus 1 letter"
                 }
+            
                 else {
                     signArray.push(signObject)
         localStorage.setItem('accounts',JSON.stringify(signArray))
@@ -38,6 +40,10 @@ function add() {
             }
 }
 function checkEmail(str) {
-    let emailVali = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let emailVali = /^(.+)@(.+)(\.)(.+)$/
     return emailVali.test(str)
+}
+function checkPassword(pass) {
+    let PassVali=/^[0-9]{8}[a-zA-Z]$/
+    return PassVali.test(pass)
 }

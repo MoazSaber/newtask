@@ -1,3 +1,4 @@
+
 let signArray=[]
 if(localStorage.getItem('accounts')!==null){
     signArray=JSON.parse(localStorage.getItem('accounts'))
@@ -28,7 +29,7 @@ for(let i=0;i<signArray.length;i++){
  }
 
 if(loginEmail.value!==signArray[i].email||loginPassword.value!==signArray[i].password){
-    document.getElementById('message').innerHTML=" your email dosen't exist,please make new account then login"
+    document.getElementById('message').innerHTML=" your email dosen't exist,please make a new account then login"
     }
     }
 }

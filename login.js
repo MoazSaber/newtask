@@ -21,7 +21,7 @@ else{
 function checkUser() {
     
 for(let i=0;i<signArray.length;i++){
- if(loginEmail.value==signArray[i].email||loginPassword.value==signArray[i].password)
+ if(loginEmail.value==signArray[i].email&&loginPassword.value==signArray[i].password)
  {
     localStorage.setItem("user",JSON.stringify(signArray[i].name))
     location.href="home/home.html"
